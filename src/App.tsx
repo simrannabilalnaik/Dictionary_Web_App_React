@@ -83,13 +83,15 @@ function App() {
       {/* Word Details */}
       {definition && (
         <div className="word-details">
-          <h1>{definition.word}</h1>
+          <div className="word-header">
+            <h1>{definition.word}</h1>
+            {audioUrl && (
+              <button className="audio-btn" onClick={() => new Audio(audioUrl).play()}>
+                ▶
+              </button>
+            )}
+          </div>
           <p className="phonetic">{definition.phonetic}</p>
-          {audioUrl && (
-            <button className="audio-btn" onClick={() => new Audio(audioUrl).play()}>
-              ▶
-            </button>
-          )}
 
           {definition.meanings.map((m: any, i: number) => (
             <div key={i} className="meaning-block">
