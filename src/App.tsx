@@ -43,8 +43,14 @@ function App() {
     }
   };
 
+  const getFontFamily = () => {
+    if (font === "serif") return "'Merriweather', serif";
+    if (font === "sans-serif") return "'Roboto', sans-serif";
+    return "'Courier Prime', monospace";
+  };
+
   return (
-    <div className={`app ${theme}`} style={{ fontFamily: font }}>
+    <div className={`app ${theme}`} style={{ fontFamily: getFontFamily() }}>
       {/* Top Bar */}
       <header className="top-bar">
         <h4>Dictionary</h4>

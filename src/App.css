@@ -23,14 +23,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  gap: 3rem;
   margin-bottom: 2rem;
 }
 
 .top-bar select {
   padding: 0.4rem;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+  border:none;
 }
 
 .top-bar button {
