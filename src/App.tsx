@@ -55,27 +55,34 @@ function App() {
       <header className="top-bar">
         <h4>Dictionary</h4>
         <div>
-          <select value={font} onChange={(e) => setFont(e.target.value)}>
-            <option value="serif">Serif</option>
-            <option value="sans-serif">Sans</option>
-            <option value="monospace">Mono</option>
+          <select  value={font} onChange={(e) => setFont(e.target.value)}>
+            <option id="text" value="serif">Serif</option>
+            <option id="text" value="sans-serif">Sans</option>
+            <option id="text"value="monospace">Mono</option>
           </select>
-          <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
-            {theme === "light" ? "🌙" : "☀️"}
+          
+           <span className="divider"></span>
+
+        
+        <button id="button" onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+            {theme === "light" ? <img src="/toggle.svg" id="toggleicon"/> :  <img src="/toggle.svg" id="toggleicon"/>}
+          </button>
+
+          <button id="button" onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+            {theme === "light" ? <img src="/moon-outline (1).svg" id="pic"/> : "☀️"}
+          
           </button>
         </div>
       </header>
 
-      {/* Search Bar */}
       <div className="search-bar">
-        <input
-          type="text"
-          value={word}
-          onChange={(e) => setWord(e.target.value)}
-          placeholder="Type something here..."
-        />
-        <button onClick={fetchDefinition}>🔍</button>
-      </div>
+  <input
+    type="text"
+    value={word}
+    onChange={(e) => setWord(e.target.value)}
+    placeholder="Type something here..."/>
+  <img src="/search.svg" id="icon1" className="search-icon" onClick={fetchDefinition} />
+</div>
 
       {/* Error Message */}
       {error && <p className="error">{error}</p>}

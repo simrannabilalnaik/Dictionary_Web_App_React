@@ -5,4 +5,43 @@
   box-sizing: border-box;
 }
 
+#pic {
+  width: 20px;
+  height: 20px;
+}
 
+#toggleicon {
+  width: 20px;
+  height: 20px;
+}
+
+.top-bar div{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+
+select {
+  margin-right: 0.3rem; 
+}
+
+
+#button:last-of-type {
+  margin-left: 0.3rem;
+}
+
+.divider {
+  width: 1px;
+  height: 20px;
+  background-color :#636e72;
+  margin-right: 0.3rem;
+}
