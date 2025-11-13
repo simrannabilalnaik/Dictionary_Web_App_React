@@ -1,73 +1,50 @@
-# React + TypeScript + Vite
+# Dictionary Maker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Small React app that looks up English word definitions and plays pronunciation audio from dictionaryapi.dev.
 
-Currently, two official plugins are available:
+## Features
+- Search English words and view definitions, phonetics, meanings, synonyms and source URL.
+- Play/pause pronunciation audio with a single shared audio instance.
+- Light / dark theme toggle and font selection (Serif, Sans, Mono).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Prerequisites
+- Node.js (>=14) and npm or yarn
+- Windows (commands below use npm; works the same on other OSes)
 
-## React Compiler
+## Install
+Open a terminal in the project root (`c:\Reactproject\dictionarymaker`) and run:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+PowerShell / CMD:
+```ps1
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Run (development)
+```ps1
+npm start
 ```
+This runs the app in development mode. Open http://localhost:3000 in a browser.
+
+## Build (production)
+```ps1
+npm run build
+```
+Build output goes to `build/`.
+
+## How to use
+- Type a word in the search box and click the search icon.
+- If audio is available, a play button appears next to the word. Click to play/pause.
+- The UI updates the play/pause icon automatically when audio plays, pauses or ends.
+
+## Notes for developers
+- Main component: `src/App.tsx`.
+- Audio handling uses a single `HTMLAudioElement` instance (ref + effect) so playback state (`toggle`) is driven by audio events (`play`, `pause`, `ended`). This avoids creating multiple Audio objects and ensures `toggle` is set to `false` when playback completes.
+- Styling: `src/App.css`.
+- Assets: `src/assets/` (play/pause svg).
+
+## Troubleshooting
+- If audio doesn't play, check browser autoplay/security settings and that the audio URL is reachable.
+- If fetch fails, confirm network access to `https://api.dictionaryapi.dev`.
+
+## License
+MIT
