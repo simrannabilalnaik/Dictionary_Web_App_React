@@ -11,7 +11,7 @@ Small React app that looks up English word definitions and plays pronunciation a
 - Node.js (>=14) and npm or yarn
 - Windows (commands below use npm; works the same on other OSes)
 
-## Install
+## Installgitgit
 Open a terminal in the project root (`c:\Reactproject\dictionarymaker`) and run:
 
 PowerShell / CMD:
