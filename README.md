@@ -47,4 +47,4 @@ Build output goes to `build/`.
 - If fetch fails, confirm network access to `https://api.dictionaryapi.dev`.
 
 ## License
-MIT
+[MIT](https://github.com/simrannabilalnaik/Dictionary_Web_App_React/blob/main/LICENSE)
