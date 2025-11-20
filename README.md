@@ -7,6 +7,9 @@ Small React app that looks up English word definitions and plays pronunciation a
 - Play/pause pronunciation audio with a single shared audio instance.
 - Light / dark theme toggle and font selection (Serif, Sans, Mono).
 
+## Project Demo
+Click here to see the demo
+
 ## Prerequisites
 - Node.js (>=14) and npm or yarn
 - Windows (commands below use npm; works the same on other OSes)
