@@ -8,7 +8,7 @@ Small React app that looks up English word definitions and plays pronunciation a
 - Light / dark theme toggle and font selection (Serif, Sans, Mono).
 
 ## Project Demo
-Click here to see the demo- https://github.com/simrannabilalnaik/Dictionary_Web_App_React/blob/main/src/assets/Project%20Demo.mp4
+[Click here to see the demo-https://github.com/simrannabilalnaik/Dictionary_Web_App_React/blob/main/src/assets/Project%20Demo.mp4]
 
 ## Prerequisites
 - Node.js (>=14) and npm or yarn
